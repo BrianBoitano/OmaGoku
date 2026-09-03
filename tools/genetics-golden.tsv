@@ -1,0 +1,38 @@
+# The genetics colour table. BLESSED, not derived at build time.
+#
+# gen-sprites.py computes each variant colour and asserts it equals the row here, and
+# FAILS the build on a source colour with no row -- so adding a per-line O or N override
+# forces a human to bless five new values instead of silently inheriting whatever the
+# helper produces. Regenerated only with `gen-sprites.py --bless`, whose diff a person
+# reads and whose swatches land on the acceptance sheet.
+#
+# This is a REGRESSION LOCK on the pinned formula's output, not an independent proof
+# that the formula is right. Nobody can validate 6B4E9E -> 69558D by reading hex; the
+# art gate is where that question is actually answerable.
+#
+# source	bucket	result	note
+F07C1E	0	BB8961	O goku/krillin, the global default
+F07C1E	1	D68544	
+F07C1E	2	F07C1E	
+F07C1E	3	FE770A	
+F07C1E	4	FF7200	
+16306B	0	2F3A53	O vegeta
+16306B	1	24365F	
+16306B	2	16306B	
+16306B	3	0E2D71	
+16306B	4	042778	
+6B4E9E	0	65597B	O piccolo
+6B4E9E	1	69558D	
+6B4E9E	2	6B4E9E	
+6B4E9E	3	6C4AA7	
+6B4E9E	4	6B44B1	
+7B4BA8	0	705B83	O frieza
+7B4BA8	1	765596	
+7B4BA8	2	7B4BA8	
+7B4BA8	3	7E46B2	
+7B4BA8	4	7F3DBC	
+6B3F1D	0	534132	N every line, the global default
+6B3F1D	1	5F4129	
+6B3F1D	2	6B3F1D	
+6B3F1D	3	713E16	
+6B3F1D	4	783C0D	

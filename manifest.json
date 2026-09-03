@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "brianboitano.omagoku",
+  "name": "Omagoku",
+  "version": "1.1.0",
+  "author": "BrianBoitano",
+  "license": "MIT",
+  "description": "A Dragon Ball desktop pet. It hatches from an attack pod in your bar, grows up in its own room, roams your screen, and transforms when the machine works hard. Five families, each with its own art, voice and transformations.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Omagoku",
+    "description": "Goku in your bar. Click to open his room.",
+    "category": "Fun",
+    "allowMultiple": false,
+    "defaultSection": "center"
+  },
+  "attribution": "Forked from SLcode777/omagotchi @ 669ea0b7eac7a78ec408512cb81d8e5082c3c33b, MIT. Original code and sprites by SLcode777; sound effects keep their own licences, see CREDITS.md."
+}

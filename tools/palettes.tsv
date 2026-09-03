@@ -1,0 +1,32 @@
+# line	glyph	hex	note
+# Y/C/G are the three transformation rungs and are REQUIRED for every line.
+# Inheriting them silently is how every line's rung sprite came out Super Saiyan gold.
+goku	Y	FFD24A	super saiyan
+goku	C	66E0FF	super saiyan blue
+goku	G	C8C8D4	ultra instinct
+vegeta	O	16306B	navy bodysuit
+vegeta	B	E8E8E8	white armour
+vegeta	W	E8E8E8	white gloves and boots
+vegeta	K	2A1A12	dark brown hair
+vegeta	Y	FFD24A	super saiyan
+vegeta	C	66E0FF	super saiyan 2 keeps gold in canon, blue reads better at 16px
+vegeta	G	7FD4FF	blue evolution
+piccolo	S	4E8B3C	namekian green
+piccolo	O	6B4E9E	purple gi
+piccolo	B	C8322A	red sash
+piccolo	W	E8E8E8	white cape and turban
+piccolo	K	1A3315	dark green head
+piccolo	Y	7FE05A	nail-fused
+piccolo	C	B0F0C8	kami-fused
+piccolo	G	F0902A	orange piccolo
+krillin	Y	FFD24A	focused
+krillin	C	66E0FF	destructo disc
+krillin	G	F5F0C0	unlocked potential
+frieza	S	F0F0F0	white carapace
+frieza	O	7B4BA8	purple plating
+frieza	B	4A2A6B	dark purple
+frieza	W	E0E0E8	pale trim
+frieza	K	D05090	pink crown
+frieza	Y	C060C0	second form
+frieza	C	E8E8F0	final form
+frieza	G	FFD24A	golden frieza
