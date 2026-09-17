@@ -46,6 +46,12 @@ Panel {
   // settingsControl.open is never reset when the panel closes, so without explicit mutual
   // exclusion both flags could be true at once.
   readonly property bool anyPaneOpen: settingsControl.open || lineagePane.open
+  // Shenron waits for one thing, and while it does the needs, the hunt, the farewell and
+  // the Nimbus step aside. The card is capped to the screen by fittedContentHeight and
+  // nothing here scrolls, so with all of them showing the wish menu lands below the bottom
+  // edge: seven balls, Shenron's head, and no way to speak.
+  readonly property bool shenronOpen: !anyPaneOpen && ready && petService.shenronPending
+  readonly property bool roomBusy: anyPaneOpen || shenronOpen
   readonly property color foreground: Color.popups.text
   readonly property string fontFamily: bar ? bar.fontFamily : Style.font.family
 
@@ -942,7 +948,7 @@ Panel {
         Button {
           anchors.horizontalCenter: parent.horizontalCenter
           visible: root.ready && root.petService.stage === "adult"
-            && !root.petService.farewellPending && !root.anyPaneOpen && root.lineChosen
+            && !root.petService.farewellPending && !root.roomBusy && root.lineChosen
           text: "Let it go"
           tooltipText: "Say goodbye — a new attack pod will land (Gen "
             + (root.ready ? root.petService.generation + 1 : 2) + ")"
@@ -955,7 +961,7 @@ Panel {
         Column {
           width: parent.width
           spacing: Style.space(8)
-          visible: !root.anyPaneOpen && root.lineChosen
+          visible: !root.roomBusy && root.lineChosen
 
           Repeater {
             model: root.needs
@@ -1504,7 +1510,7 @@ Panel {
         Column {
           width: parent.width
           spacing: Style.space(6)
-          visible: !root.anyPaneOpen && root.ready && root.lineChosen
+          visible: !root.roomBusy && root.ready && root.lineChosen
             && root.petService.ballsOn
 
           Row {
@@ -1545,7 +1551,7 @@ Panel {
         Column {
           width: parent.width
           spacing: Style.space(8)
-          visible: !root.anyPaneOpen && root.ready && root.petService.shenronPending
+          visible: root.shenronOpen
 
           Image {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -1589,7 +1595,7 @@ Panel {
         // --- go play / come home --------------------------------------------
         Button {
           width: parent.width
-          visible: root.ready && !root.anyPaneOpen && root.lineChosen
+          visible: root.ready && !root.roomBusy && root.lineChosen
           text: root.ready && root.petService.settings.roamEnabled === true
             ? "Come home" : "Call Nimbus"
           tooltipText: root.ready && root.petService.canRoam
