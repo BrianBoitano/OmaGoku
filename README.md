@@ -348,6 +348,10 @@ omarchy plugin add https://github.com/BrianBoitano/OmaGoku --enable
 
 `--enable` puts the widget in the centre section of your bar and starts the service.
 
+To update, `omarchy plugin update brianboitano.omagoku`, or `git pull` in
+`~/.config/omarchy/plugins/brianboitano.omagoku`, then `omarchy-restart-shell`. What changed
+in each version is in [CHANGELOG.md](CHANGELOG.md).
+
 ## Remove
 
 ```
