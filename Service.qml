@@ -1365,6 +1365,7 @@ Item {
   }
 
   function completeSendOff() {
+    var departed = line, departedName = petName
     farewellPending = false
     generation += 1
     stage = "egg"
@@ -1381,8 +1382,11 @@ Item {
     hatchedAtMs = Date.now()
     lastPetMs = hatchedAtMs
     // A pet ENDS here. The new pod carries no progression at all and earns nothing until it
-    // hatches -- sendOff keeps the line, so the heartbeat's line === "" guard would not have
-    // covered a post-farewell egg.
+    // hatches. The line ends with the pet too: the pod lands unclaimed and the roster asks
+    // whose it is, so the family carries on under the same line or starts over under another.
+    // Only the generation counter crosses a farewell. The ending row was written with the
+    // adult's line before this ran, so the family record is unaffected.
+    line = ""
     progressState = { mode: "absent", progress: null, raw: null }
     // And the hunt belonged to the pet that earned it, exactly as resetPet already says.
     // A farewell used to carry the whole ball subtree into the new egg: collected balls, a
@@ -1396,15 +1400,15 @@ Item {
     updateSettings({ roamEnabled: false })
     flushPet()
     var voiced = settings.speechEnabled === false
-      ? null : Lines.speak(line, "rebirth", { name: petName, gen: generation })
+      ? null : Lines.speak(departed, "rebirth", { name: departedName, gen: generation })
     emitNotify("rebirth", "event", "Omagoku", voiced
-      || "Your companion said goodbye and walked off into the world… a new egg appeared! (Gen " + generation + ")")
+      || "Your companion said goodbye and walked off into the world… a new pod has landed. Whose is it? (Gen " + generation + ")")
   }
 
   // START OVER. The only irreversible action in the plugin, and deliberately NOT the
-  // farewell: the farewell is a ceremony an ADULT earns, which carries the line and the
-  // generation forward. This ends the pet outright and hands back an unclaimed pod, so a
-  // run that went wrong can be abandoned at any stage rather than nursed to adulthood
+  // farewell: the farewell is a ceremony an ADULT earns, which carries the generation
+  // forward. This ends the pet outright and hands back an unclaimed pod at generation 1, so
+  // a run that went wrong can be abandoned at any stage rather than nursed to adulthood
   // first. Reached only through the settings pane and a confirmation.
   //
   // It touches the PET and nothing else. Notification budget state is deliberately left

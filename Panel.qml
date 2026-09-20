@@ -950,8 +950,8 @@ Panel {
           visible: root.ready && root.petService.stage === "adult"
             && !root.petService.farewellPending && !root.roomBusy && root.lineChosen
           text: "Let it go"
-          tooltipText: "Say goodbye — a new attack pod will land (Gen "
-            + (root.ready ? root.petService.generation + 1 : 2) + ")"
+          tooltipText: "Say goodbye — a new pod lands (Gen "
+            + (root.ready ? root.petService.generation + 1 : 2) + ") and you choose whose it is"
           fontFamily: root.fontFamily
           onClicked: farewellConfirm.opened = true
         }

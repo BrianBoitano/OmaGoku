@@ -264,9 +264,10 @@ included, rather than carrying a granted wish into a pet that never earned it.
 ## Letting go
 
 Once it is an adult the panel offers Let it go. It asks first, says goodbye, and a new pod
-lands with the generation counter one higher. The ending is written to the family record
-before the pet ends, in a step that runs to completion first and can never block the
-goodbye.
+lands with the generation counter one higher and asks whose it is: pick the same line to
+carry the family on, or another to start a new one. The ending is written to the family
+record before the pet ends, in a step that runs to completion first and can never block
+the goodbye.
 
 Reset does the same thing without the ceremony and is the only irreversible action in here.
 A reset of a pet that had hatched writes a real row too, marked as a reset rather than a

@@ -3,6 +3,13 @@
 Versions follow the `version` field in `manifest.json`. Each entry is one published commit on
 `main`, tagged `v<version>`.
 
+## 1.1.2 (2026-09-19)
+
+- After Let it go, the new pod lands unclaimed and the roster asks whose it is, so a family
+  can carry on under the same line or start over under a different character. The
+  generation counter still carries forward; Reset (settings) remains the way to abandon a
+  pet at any stage and start again at generation 1.
+
 ## 1.1.1 (2026-09-16)
 
 - Shenron's wish menu was laid out below the bottom of the screen once all seven balls were
